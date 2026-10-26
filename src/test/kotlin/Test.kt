@@ -44,4 +44,15 @@ class HaloTest {
         assertEquals(EstadoHalo.MovingDOWN, Halo.estado_actual)
         assertEquals(2, Halo.nivel_actual)
     }
+
+    @Test
+    fun `terminar la bajada deja la maquina en nivel 0`() {
+        Halo.nivel_actual = 1
+        Halo.nivel_0()
+        Halo.gestionarEstado()
+
+        assertEquals(EstadoHalo.Idle, Halo.estado_actual)
+        assertEquals(0, Halo.nivel_actual)
+    }
 }
+
