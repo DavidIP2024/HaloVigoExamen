@@ -72,4 +72,13 @@ class HaloTest {
         assertEquals(EstadoHalo.Idle, Halo.estado_actual)
         assertEquals(0, Halo.nivel_actual)
     }
+
+    @Test
+    fun `no se puede solicitar otro movimiento mientras se mueve`() {
+        Halo.nivel_1()
+        Halo.nivel_0()
+
+        assertEquals(EstadoHalo.MovingUP, Halo.estado_actual)
+        assertEquals(2, Halo.nivel_actual)
+    }
 }
