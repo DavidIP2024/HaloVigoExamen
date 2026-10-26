@@ -19,3 +19,10 @@ object Halo {
             nivel_actual = 2
         }
     }
+
+    fun nivel_1() {
+        if (estado_actual == EstadoHalo.Idle && nivel_actual == 0) {
+            estado_actual = EstadoHalo.MovingUP
+            nivel_actual = 2
+        }
+    }
