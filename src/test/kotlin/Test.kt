@@ -34,4 +34,14 @@ class HaloTest {
         assertEquals(EstadoHalo.Idle, Halo.estado_actual)
         assertEquals(1, Halo.nivel_actual)
     }
+
+    @Test
+    fun `pulsar nivel 0 desde nivel 1 inicia la bajada`() {
+        Halo.nivel_actual = 1
+
+        Halo.nivel_0()
+
+        assertEquals(EstadoHalo.MovingDOWN, Halo.estado_actual)
+        assertEquals(2, Halo.nivel_actual)
+    }
 }
