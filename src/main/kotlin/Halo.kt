@@ -47,3 +47,8 @@ object Halo {
             }
         }
     }
+    fun activarError() {
+        estado_actual = EstadoHalo.Error
+        nivel_actual = -1
+    }
+}
