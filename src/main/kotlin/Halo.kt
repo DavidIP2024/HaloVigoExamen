@@ -11,3 +11,11 @@ object Halo {
 
     var nivel_actual: Int = 0
     var estado_actual: EstadoHalo = EstadoHalo.Idle
+
+
+    fun nivel_0() {
+        if (estado_actual == EstadoHalo.Idle && nivel_actual == 1) {
+            estado_actual = EstadoHalo.MovingDOWN
+            nivel_actual = 2
+        }
+    }
