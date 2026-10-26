@@ -54,5 +54,14 @@ class HaloTest {
         assertEquals(EstadoHalo.Idle, Halo.estado_actual)
         assertEquals(0, Halo.nivel_actual)
     }
-}
 
+    @Test
+    fun `no se puede subir si ya esta en nivel 1`() {
+        Halo.nivel_actual = 1
+
+        Halo.nivel_1()
+
+        assertEquals(EstadoHalo.Idle, Halo.estado_actual)
+        assertEquals(1, Halo.nivel_actual)
+    }
+}
