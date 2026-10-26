@@ -26,3 +26,24 @@ object Halo {
             nivel_actual = 2
         }
     }
+
+    fun gestionarEstado() {
+        when (estado_actual) {
+            EstadoHalo.Idle -> {
+            }
+
+            EstadoHalo.MovingUP -> {
+                nivel_actual = 1
+                estado_actual = EstadoHalo.Idle
+            }
+
+            EstadoHalo.MovingDOWN -> {
+                nivel_actual = 0
+                estado_actual = EstadoHalo.Idle
+            }
+
+            EstadoHalo.Error -> {
+                nivel_actual = -1
+            }
+        }
+    }
